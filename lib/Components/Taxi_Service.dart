@@ -11,13 +11,15 @@ class TaxiService extends StatelessWidget {
       child: GridView.builder(
         gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 3,
-            mainAxisSpacing: 5,
+            mainAxisSpacing: 10,
             crossAxisSpacing: 10,
             childAspectRatio: 12 / 9),
         physics: NeverScrollableScrollPhysics(),
         itemCount: 4,
         itemBuilder: (BuildContext context, int index) {
-          return TaxiItems();
+          return TaxiItems(
+            index: index,
+          );
         },
       ),
     );
