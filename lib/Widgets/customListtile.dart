@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:marvelapp/Utils/pallets.dart';
 
 class CustomListile extends StatelessWidget {
   final String label;
@@ -9,17 +10,13 @@ class CustomListile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    
     return Row(
       mainAxisAlignment: MainAxisAlignment.spaceBetween,
       children: [
         Text(
           label,
-          style: TextStyle(
-            fontFamily: 'UberMove-Medium',
-            color: Color(0xFF080808),
-            fontSize: 16,
-            height: 1.19,
-          ),
+          style: subheadStyle,
         ),
         OutlinedButton(
           onPressed: () {

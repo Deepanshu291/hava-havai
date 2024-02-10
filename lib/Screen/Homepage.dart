@@ -58,17 +58,17 @@ class _HomePageState extends State<HomePage> {
             Navbar(),
             Frames(
               heading: "Taxi Service",
-              child: Container(
-                child: GridView.builder(
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 3,
-                  ),
-                  itemCount: 4,
-                  itemBuilder: (BuildContext context, int index) {
-                    return Container(color: Colors.amber,);
-                  },
-                ),
-              )
+              // child: Container(
+              //   child: GridView.builder(
+              //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              //       crossAxisCount: 3,
+              //     ),
+              //     itemCount: 4,
+              //     itemBuilder: (BuildContext context, int index) {
+              //       return Container(color: Colors.amber,);
+              //     },
+              //   ),
+              // )
             ),
             const Frames(
               heading: "Public transport",
@@ -210,7 +210,7 @@ class _HomePageState extends State<HomePage> {
                     )
                   ],
                 )),
-            Frames(heading: "Foreign exhange"),
+            Frames(heading: "Foreign exhange", child: Accordion()),
             const Frames(
               heading: "Contact airport",
               child: Column(
@@ -287,6 +287,98 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       ),
+    );
+  }
+}
+
+class Accordion extends StatefulWidget {
+  @override
+  _AccordionState createState() => _AccordionState();
+}
+
+class _AccordionState extends State<Accordion> {
+  int _currentIndex = -1;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        AccordionItem(
+          title: 'Travelex',
+          content:
+              'Terminal 3-\nAirside Dept Downtown, Concourse B,\nTerminal 3, beside Winston Smoking room',
+          index: 0,
+          currentIndex: _currentIndex,
+          onTap: () {
+            setState(() {
+              _currentIndex = _currentIndex == 0 ? -1 : 0;
+            });
+          },
+        ),
+        Divider(),
+        AccordionItem(
+          title: 'AI Ansari Exchange',
+          content: 'Terminal 3-\nAirside Dept Downtown, Concourse B,\nTerminal 3, beside Winston Smoking room',
+          index: 1,
+          currentIndex: _currentIndex,
+          onTap: () {
+            setState(() {
+              _currentIndex = _currentIndex == 1 ? -1 : 1;
+            });
+          },
+        ),
+        Divider(),
+        AccordionItem(
+          title: 'Emirates NBD',
+          content: 'Terminal 3-\nAirside Dept Downtown, Concourse B,\nTerminal 3, beside Winston Smoking room',
+          index: 2,
+          currentIndex: _currentIndex,
+          onTap: () {
+            setState(() {
+              _currentIndex = _currentIndex == 2 ? -1 : 2;
+            });
+          },
+        ),
+      ],
+    );
+  }
+}
+
+class AccordionItem extends StatelessWidget {
+  final String title;
+  final String content;
+  final int index;
+  final int currentIndex;
+  final VoidCallback onTap;
+
+  AccordionItem({
+    required this.title,
+    required this.content,
+    required this.index,
+    required this.currentIndex,
+    required this.onTap,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      children: [
+        ListTile(
+          title: Text(
+            title,
+            style: subheadStyle.copyWith(fontSize: 16),
+          ),
+          onTap: onTap,
+          trailing: Icon(
+            currentIndex == index ? Icons.expand_less : Icons.expand_more,
+          ),
+        ),
+        if (currentIndex == index)
+          Text(
+            content,
+            style: dubaiStyle,
+          ),
+      ],
     );
   }
 }

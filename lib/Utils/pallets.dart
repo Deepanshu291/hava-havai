@@ -21,6 +21,13 @@ final TextStyle dubaiStyle = TextStyle(
   height: 1.17,
 );
 
+final TextStyle subheadStyle = TextStyle(
+  fontFamily: 'UberMove-Medium',
+  color: Color(0xFF080808),
+  fontSize: 16,
+  height: 1.19,
+);
+
 
 ButtonStyle btnstyle(isActive,double bradius) => ElevatedButton.styleFrom(
   shape: RoundedRectangleBorder(
