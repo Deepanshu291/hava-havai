@@ -38,7 +38,7 @@ class TaxiItems extends StatelessWidget {
             ),
             Flexible(
               flex: 1,
-              child: Text("\$\$\$\$", style: dubaiStyle),
+              child: Text("\$\$\$\$\$", style: dubaiStyle),
             )
           ],
         ),
