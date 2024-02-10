@@ -7,14 +7,13 @@ class listTile extends StatelessWidget {
   final String subtile;
   final IconData subIcon;
   final bool? pb;
-  const listTile({
-    super.key,
-    required this.icon,
-    required this.title,
-    required this.subtile,
-    required this.subIcon,
-    this.pb=false
-  });
+  const listTile(
+      {super.key,
+      required this.icon,
+      required this.title,
+      required this.subtile,
+      required this.subIcon,
+      this.pb = false});
 
   @override
   Widget build(BuildContext context) {
@@ -33,12 +32,13 @@ class listTile extends StatelessWidget {
             ),
             Text(
               title,
-              style:pb!? dubaiStyle.copyWith(
+              style: pb!
+                  ? dubaiStyle.copyWith(
                       color: Color(0xFF080808),
                       fontSize: 17,
                       height: 1.19,
                     )
-                  :dubaiStyle.copyWith(fontSize: 14),
+                  : dubaiStyle.copyWith(fontSize: 14),
             ),
           ],
         ),
@@ -47,15 +47,21 @@ class listTile extends StatelessWidget {
           children: [
             Text(
               subtile,
-              style:pb!?dubaiStyle :dubaiStyle.copyWith(
-                  color: Color(0xFF080808),
-                  fontSize: 14,
-                  fontWeight: FontWeight.w600),
+              style: pb!
+                  ? dubaiStyle
+                  : dubaiStyle.copyWith(
+                      color: Color(0xFF080808),
+                      fontSize: 14,
+                      fontWeight: FontWeight.w600),
             ),
             SizedBox(
-              width: pb!? 20:0,
+              width: pb! ? 20 : 0,
             ),
-            Icon(subIcon)
+            Icon(
+              subIcon,
+              size: pb! ? 16 : 11,
+              weight: pb! ? 12 : 15,
+            )
           ],
         )
       ],

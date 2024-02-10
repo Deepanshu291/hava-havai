@@ -1,5 +1,6 @@
 import 'package:marvelapp/Utils/utils.dart';
 import 'package:flutter/material.dart';
+import 'package:marvelapp/Widgets/Accordion/Accordion.dart';
 import 'package:marvelapp/Widgets/Herocontainer.dart';
 import 'package:marvelapp/Widgets/Navbar.dart';
 import 'package:marvelapp/Widgets/customListtile.dart';
@@ -38,7 +39,7 @@ class _HomePageState extends State<HomePage> {
                   Row(
                     children: [
                       Text(
-                        'Dubai  .', // You may adjust the text to match your needs
+                        'Dubai  .',
                         style: dubaiStyle,
                       ),
                       Text(
@@ -52,23 +53,32 @@ class _HomePageState extends State<HomePage> {
             ),
             SizedBox(
               width: 350,
-              height: 320, // Set the height of Heroframes
-              child: Heroframes(), // Wrap Heroframes with SizedBox
+              height: 320,
+              child: Heroframes(),
             ),
             Navbar(),
             Frames(
               heading: "Taxi Service",
-              // child: Container(
-              //   child: GridView.builder(
-              //     gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-              //       crossAxisCount: 3,
-              //     ),
-              //     itemCount: 4,
-              //     itemBuilder: (BuildContext context, int index) {
-              //       return Container(color: Colors.amber,);
-              //     },
-              //   ),
-              // )
+              // child: Column(
+              //   children: [
+              //     TaxiItems()
+              //   ],
+              // ),
+              child: SizedBox(
+                height: 150,
+                child: GridView.builder(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                      crossAxisCount: 3,
+                      mainAxisSpacing: 5,
+                      crossAxisSpacing: 10,
+                      childAspectRatio: 16 / 9),
+                  physics: NeverScrollableScrollPhysics(),
+                  itemCount: 4,
+                  itemBuilder: (BuildContext context, int index) {
+                    return TaxiItems();
+                  },
+                ),
+              ),
             ),
             const Frames(
               heading: "Public transport",
@@ -126,7 +136,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icons.motorcycle,
                     title: "Two Wheeler",
                     subtile: "AED 50 / day",
-                    subIcon: Icons.abc,
+                    subIcon: Icons.error_outline,
                   ),
                   const SizedBox(
                     height: 10,
@@ -135,7 +145,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icons.car_rental,
                     title: "Car Parking",
                     subtile: "AED 100 / day",
-                    subIcon: Icons.abc,
+                    subIcon: Icons.error_outline,
                   ),
                   const SizedBox(
                     height: 10,
@@ -144,7 +154,7 @@ class _HomePageState extends State<HomePage> {
                     icon: Icons.motorcycle,
                     title: "Two Wheeler",
                     subtile: "AED 50 / day",
-                    subIcon: Icons.abc,
+                    subIcon: Icons.error_outline,
                   )
                 ],
               ),
@@ -291,94 +301,79 @@ class _HomePageState extends State<HomePage> {
   }
 }
 
-class Accordion extends StatefulWidget {
-  @override
-  _AccordionState createState() => _AccordionState();
-}
-
-class _AccordionState extends State<Accordion> {
-  int _currentIndex = -1;
+class TaxiItems extends StatelessWidget {
+  const TaxiItems({
+    Key? key,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        AccordionItem(
-          title: 'Travelex',
-          content:
-              'Terminal 3-\nAirside Dept Downtown, Concourse B,\nTerminal 3, beside Winston Smoking room',
-          index: 0,
-          currentIndex: _currentIndex,
-          onTap: () {
-            setState(() {
-              _currentIndex = _currentIndex == 0 ? -1 : 0;
-            });
-          },
+    return Material(
+      elevation: 2,
+      borderRadius: BorderRadius.circular(10),
+      child: Container(
+        height: 100,
+        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        decoration: BoxDecoration(
+          color: Colors.white,
+          borderRadius: BorderRadius.circular(10),
         ),
-        Divider(),
-        AccordionItem(
-          title: 'AI Ansari Exchange',
-          content: 'Terminal 3-\nAirside Dept Downtown, Concourse B,\nTerminal 3, beside Winston Smoking room',
-          index: 1,
-          currentIndex: _currentIndex,
-          onTap: () {
-            setState(() {
-              _currentIndex = _currentIndex == 1 ? -1 : 1;
-            });
-          },
+        child: Column(
+          mainAxisAlignment:
+              MainAxisAlignment.spaceEvenly, // Adjusted alignment
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            Flexible(
+              flex: 2,
+              child: Image(
+                image: NetworkImage(
+                    "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"),
+                width: 80,
+              ),
+            ),
+            Flexible(
+              flex: 1,
+              child: Text(
+                "\$ \$ \$ \$",
+                style: TextStyle(fontSize: 16), // Adjusted font size
+              ),
+            )
+          ],
         ),
-        Divider(),
-        AccordionItem(
-          title: 'Emirates NBD',
-          content: 'Terminal 3-\nAirside Dept Downtown, Concourse B,\nTerminal 3, beside Winston Smoking room',
-          index: 2,
-          currentIndex: _currentIndex,
-          onTap: () {
-            setState(() {
-              _currentIndex = _currentIndex == 2 ? -1 : 2;
-            });
-          },
-        ),
-      ],
+      ),
     );
   }
 }
 
-class AccordionItem extends StatelessWidget {
-  final String title;
-  final String content;
-  final int index;
-  final int currentIndex;
-  final VoidCallback onTap;
 
-  AccordionItem({
-    required this.title,
-    required this.content,
-    required this.index,
-    required this.currentIndex,
-    required this.onTap,
-  });
+// class TaxiItems extends StatelessWidget {
+//   const TaxiItems({
+//     super.key,
+//   });
 
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      children: [
-        ListTile(
-          title: Text(
-            title,
-            style: subheadStyle.copyWith(fontSize: 16),
-          ),
-          onTap: onTap,
-          trailing: Icon(
-            currentIndex == index ? Icons.expand_less : Icons.expand_more,
-          ),
-        ),
-        if (currentIndex == index)
-          Text(
-            content,
-            style: dubaiStyle,
-          ),
-      ],
-    );
-  }
-}
+//   @override
+//   Widget build(BuildContext context) {
+//     return Material(
+//       elevation: 2,
+//       borderRadius: BorderRadius.circular(10),
+//       child: Container(
+//         // color: Colors.amber,
+//         padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+
+//         decoration: BoxDecoration(
+//             color: Colors.white, borderRadius: BorderRadius.circular(10)),
+//         child: Column(
+//           // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             Image(
+//               image: NetworkImage(
+//                   "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"),
+//               width: 80,
+//             ),
+//             Text("\$ \$ \$ \$")
+//           ],
+//         ),
+//       ),
+//     );
+//   }
+// }
