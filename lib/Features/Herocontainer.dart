@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:marvelapp/Utils/svg.dart';
 import 'package:marvelapp/Widgets/Buttons/buttons.dart';
-
 
 class Heroframes extends StatelessWidget {
   const Heroframes({super.key});
@@ -18,9 +19,9 @@ class Heroframes extends StatelessWidget {
           decoration: BoxDecoration(
             // color: Color(0xFF01000F),
             borderRadius: BorderRadius.circular(12),
-            image:const DecorationImage(
+            image: const DecorationImage(
               image: NetworkImage(
-                  "https://images.unsplash.com/photo-1444723121867-7a241cacace9"), 
+                  "https://images.unsplash.com/photo-1444723121867-7a241cacace9"),
               fit: BoxFit.cover,
             ),
           ),
@@ -43,29 +44,29 @@ class Heroframes extends StatelessWidget {
               mainAxisSize: MainAxisSize
                   .min, // Ensure the Column takes minimum vertical space
               children: [
-              const  Padding(
-                  padding:  EdgeInsets.all(8.0),
+                const Padding(
+                  padding: EdgeInsets.all(8.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
                     children: [
                       Thumb(
-                        icon: Icons.cloudy_snowing,
+                        svg: SvgPath.cloud,
                         text: '19 C',
                         subtext: 'Cloudy',
                       ),
                       Thumb(
-                        icon: Icons.calendar_month,
+                        svg: SvgPath.calander,
                         text: '30 Jan',
                         subtext: 'Mon',
                       ),
                       Thumb(
-                        icon: Icons.timer_rounded,
+                        svg: SvgPath.time,
                         text: '8:45 PM',
                         subtext: 'GMT+4',
                       ),
                       Thumb(
-                        icon: Icons.wallet,
+                        svg: SvgPath.currency,
                         text: 'AED',
                         subtext: '1\$= 3.67AED',
                       ),
@@ -113,28 +114,29 @@ class Heroframes extends StatelessWidget {
 }
 
 class Thumb extends StatelessWidget {
-  final IconData icon;
+  final String svg;
   final String text;
   final String subtext;
 
   const Thumb({
     super.key,
-    required this.icon,
     required this.text,
     required this.subtext,
+    required this.svg,
   });
 
   @override
   Widget build(BuildContext context) {
-    return  SizedBox(
+    return SizedBox(
       height: 80,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          Icon(icon),
+          // Icon(icon),
+          SvgPicture.asset(svg, height: 16),
           Text(
             text,
-            style:const TextStyle(
+            style: const TextStyle(
               fontFamily: 'UberMove-Medium',
               color: Color(0xFF080808),
               fontSize: 16,
@@ -143,7 +145,7 @@ class Thumb extends StatelessWidget {
           ),
           Text(
             subtext,
-            style:const TextStyle(
+            style: const TextStyle(
               fontFamily: 'UberMove-Medium',
               color: Color(0xFF909090),
               fontSize: 11,
