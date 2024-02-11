@@ -1,16 +1,21 @@
-# marvelapp
+<h1 align="center">Welcome to hava-havai 👋</h1>
+<p>
+The objective of this assignment is to evaluate your ability to translate design into code, paying attention to detail while efficiently utilizing Flutter's capabilities.
+</p>
 
-A new Flutter project.
+ 
 
-## Getting Started
+## Author
 
-This project is a starting point for a Flutter application.
+👤 **Deepanshu Sharma**
 
-A few resources to get you started if this is your first Flutter project:
+* Website: https://deepanshu291.github.io/
+* Github: [@deepanshu291](https://github.com/deepanshu291)
+* LinkedIn: [@Deepanshu291](https://linkedin.com/in/Deepanshu291)
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Show your support
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Give a ⭐️ if this project helped you!
+
+***
+_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
