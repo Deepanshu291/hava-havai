@@ -32,7 +32,7 @@ class TaxiItems extends StatelessWidget {
               child: Image(
                 image: NetworkImage(
                     // "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png"
-                    companyList[index]),
+                    CompanyList[index]),
                 width: 80,
               ),
             ),

@@ -1,8 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marvelapp/Utils/Svg.dart';
 import 'package:marvelapp/Widgets/Buttons/NavbarBtn.dart';
-import 'package:marvelapp/Widgets/CustomListTile.dart';
-import 'package:marvelapp/Widgets/listTile.dart';
+import 'package:marvelapp/Widgets/Lists/listTile.dart';
 
 class SelfParking extends StatefulWidget {
   const SelfParking({super.key});
@@ -42,7 +41,7 @@ class _SelfParkingState extends State<SelfParking> {
             ),
           ],
         ),
-        SizedBox(
+        const SizedBox(
           height: 10,
         ),
         const CustomListTile(

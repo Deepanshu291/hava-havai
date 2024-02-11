@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marvelapp/Widgets/TaxiItems.dart';
+import 'package:marvelapp/Widgets/Lists/TaxiItems.dart';
 
 class TaxiService extends StatelessWidget {
   const TaxiService({super.key});
@@ -14,7 +14,7 @@ class TaxiService extends StatelessWidget {
             mainAxisSpacing: 10,
             crossAxisSpacing: 10,
             childAspectRatio: 12 / 9),
-        physics: NeverScrollableScrollPhysics(),
+        physics: const NeverScrollableScrollPhysics(),
         itemCount: 4,
         itemBuilder: (BuildContext context, int index) {
           return TaxiItems(

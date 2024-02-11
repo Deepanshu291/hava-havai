@@ -19,8 +19,7 @@ class BottomButtons extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10), 
-              ),
-              primary:const Color(0xFF080808), 
+              ), backgroundColor: const Color(0xFF080808), 
               padding: const EdgeInsets.symmetric(
                   vertical: 12, horizontal: 20), 
             ),
@@ -46,8 +45,7 @@ class BottomButtons extends StatelessWidget {
             style: ElevatedButton.styleFrom(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(10), // Rounded corners
-              ),
-              primary:const Color(0xFF080808), // Background color
+              ), backgroundColor: const Color(0xFF080808), // Background color
               padding:const EdgeInsets.symmetric(
                   vertical: 12, horizontal: 20), // Button padding
             ),

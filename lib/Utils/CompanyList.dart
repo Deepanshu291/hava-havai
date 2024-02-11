@@ -1,4 +1,4 @@
-List companyList = [
+List CompanyList = [
   "https://upload.wikimedia.org/wikipedia/commons/c/cc/Uber_logo_2018.png",
   "https://cdn.freebiesupply.com/logos/large/2x/careem-logo-png-transparent.png",
   "https://asset.brandfetch.io/idHYUp6drU/idW1GuYoiZ.png",

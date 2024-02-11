@@ -1,14 +1,14 @@
-import 'package:marvelapp/Components/Bottom_button.dart';
-import 'package:marvelapp/Components/Contact_airport.dart';
-import 'package:marvelapp/Components/Public_transport.dart';
-import 'package:marvelapp/Components/Self_Parking.dart';
-import 'package:marvelapp/Components/Taxi_Service.dart';
-import 'package:marvelapp/Components/Terminal_map.dart';
+import 'package:marvelapp/Features/Bottom_button.dart';
+import 'package:marvelapp/Features/Contact_airport.dart';
+import 'package:marvelapp/Features/Herocontainer.dart';
+import 'package:marvelapp/Features/Public_transport.dart';
+import 'package:marvelapp/Features/Self_Parking.dart';
+import 'package:marvelapp/Features/Taxi_Service.dart';
+import 'package:marvelapp/Features/Terminal_map.dart';
 import 'package:marvelapp/Utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:marvelapp/Widgets/Accordion/Accordion.dart';
-import 'package:marvelapp/Widgets/Herocontainer.dart';
-import 'package:marvelapp/Widgets/Navbar.dart';
+import 'package:marvelapp/Features/Navbar.dart';
 import 'package:marvelapp/Widgets/customContainer.dart';
 
 class HomePage extends StatefulWidget {
@@ -55,13 +55,13 @@ class _HomePageState extends State<HomePage> {
             ),
 
             
-            SizedBox(
+           const SizedBox(
               width: 350,
               height: 320,
               child: Heroframes(),
             ),
 
-            Navbar(),
+            const Navbar(),
 
             const CustomContainer(
               heading: "Taxi Service",
