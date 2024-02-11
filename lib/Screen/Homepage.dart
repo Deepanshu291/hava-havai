@@ -9,7 +9,7 @@ import 'package:marvelapp/Utils/utils.dart';
 import 'package:flutter/material.dart';
 import 'package:marvelapp/Widgets/Accordion/Accordion.dart';
 import 'package:marvelapp/Features/Navbar.dart';
-import 'package:marvelapp/Widgets/customContainer.dart';
+import 'package:marvelapp/Widgets/containers/customContainer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:marvelapp/Widgets/Lists/TaxiItems.dart';
+import 'package:marvelapp/Widgets/ListsTile/TaxiItems.dart';
 
 class TaxiService extends StatelessWidget {
   const TaxiService({super.key});

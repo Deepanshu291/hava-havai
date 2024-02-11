@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:marvelapp/Utils/Svg.dart';
 import 'package:marvelapp/Widgets/Buttons/NavbarBtn.dart';
-import 'package:marvelapp/Widgets/Lists/listTile.dart';
+import 'package:marvelapp/Widgets/ListsTile/listTile.dart';
 
 class SelfParking extends StatefulWidget {
   const SelfParking({super.key});

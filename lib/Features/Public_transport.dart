@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:marvelapp/Utils/Svg.dart';
-import 'package:marvelapp/Widgets/Lists/listTile.dart';
+import 'package:marvelapp/Widgets/ListsTile/listTile.dart';
 
 
 class PublicTransport extends StatelessWidget {
