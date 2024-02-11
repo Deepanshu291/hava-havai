@@ -16,17 +16,17 @@ class TaxiItems extends StatelessWidget {
       borderRadius: BorderRadius.circular(10),
       child: Container(
         height: 100,
-        padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        padding:const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(10),
         ),
         child: Column(
           mainAxisAlignment:
-              MainAxisAlignment.spaceBetween, // Adjusted alignment
+              MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            index == 3 ? luxuryTag() : SizedBox(),
+            index == 3 ?const LuxuryTag() : const SizedBox(),
             Flexible(
               flex: 2,
               child: Image(
@@ -36,9 +36,9 @@ class TaxiItems extends StatelessWidget {
                 width: 80,
               ),
             ),
-            Flexible(
+          const  Flexible(
               flex: 1,
-              child: Text("\$\$\$\$\$", style: dubaiStyle),
+              child: Text("\$\$\$\$\$", style: uberMedium),
             )
           ],
         ),
@@ -47,8 +47,8 @@ class TaxiItems extends StatelessWidget {
   }
 }
 
-class luxuryTag extends StatelessWidget {
-  const luxuryTag({
+class LuxuryTag extends StatelessWidget {
+  const LuxuryTag({
     super.key,
   });
 
@@ -57,21 +57,21 @@ class luxuryTag extends StatelessWidget {
     return Container(
       width: 43,
       height: 14,
-      decoration: BoxDecoration(
-        color: Color(0xFF080808), // Set the color
+      decoration:const BoxDecoration(
+        color: Color(0xFF080808),
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(4),
           bottomRight: Radius.circular(4),
         ),
       ),
-      child: Center(
+      child:const Center(
         child: Text(
           'Luxury',
           style: TextStyle(
-            fontFamily: 'UberMove-Bold', // Set the font family
-            color: Color(0xFFCFA92D), // Set the text color
-            fontSize: 10, // Set the font size
-            height: 1.2, // Set the line spacing multiplier
+            fontFamily: 'UberMove-Bold',
+            color: Color(0xFFCFA92D), 
+            fontSize: 10, 
+            height: 1.2,
           ),
         ),
       ),

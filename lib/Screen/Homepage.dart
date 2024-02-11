@@ -9,11 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:marvelapp/Widgets/Accordion/Accordion.dart';
 import 'package:marvelapp/Widgets/Herocontainer.dart';
 import 'package:marvelapp/Widgets/Navbar.dart';
-import 'package:marvelapp/Widgets/TaxiItems.dart';
-import 'package:marvelapp/Widgets/customListtile.dart';
-import 'package:marvelapp/Widgets/frames.dart';
-import 'package:marvelapp/Widgets/Buttons/buttons.dart';
-import 'package:marvelapp/Widgets/listTile.dart';
+import 'package:marvelapp/Widgets/customContainer.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({super.key});
@@ -35,18 +31,18 @@ class _HomePageState extends State<HomePage> {
               margin: const EdgeInsets.only(top: 25, left: 15, right: 15),
               width: double.infinity,
               padding: const EdgeInsets.all(8),
-              child: Column(
+              child:const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Text(
                     "Dubai Airport-DXB",
-                    style: dubaiAirportDxbStyle,
+                    style: uberBold,
                   ),
                   Row(
                     children: [
                       Text(
                         'Dubai  .',
-                        style: dubaiStyle,
+                        style: uberMedium,
                       ),
                       Text(
                         '🇦🇪 United Arab Emirates',
@@ -67,29 +63,29 @@ class _HomePageState extends State<HomePage> {
 
             Navbar(),
 
-            const Frames(
+            const CustomContainer(
               heading: "Taxi Service",
               child: TaxiService()
             ),
 
-            const Frames(
+            const CustomContainer(
               heading: "Public transport",
               child: PublicTransport(),
             ),
 
-            const Frames(
+            const CustomContainer(
               heading: "Self parking",
               child: SelfParking()
             ),
-            const Frames(
+            const CustomContainer(
                 heading: "Terminal map",
                 child: TerminalMap()),
-            Frames(heading: "Foreign exhange", child: Accordion()),
-            const Frames(
+            CustomContainer(heading: "Foreign exhange", child: Accordion()),
+            const CustomContainer(
               heading: "Contact airport",
               child: ContactAirport(),
             ),
-            const bottomButton()
+            const BottomButtons()
           ],
         ),
       ),

@@ -23,15 +23,15 @@ class CustomListile extends StatelessWidget {
             // Add your onPressed function here
           },
           style: OutlinedButton.styleFrom(
-            backgroundColor: Color(0xFFEEEEEE),
+            backgroundColor:const Color(0xFFEEEEEE),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.circular(18), // set corners radius
             ),
-            side: BorderSide(
+            side:const BorderSide(
               color: Color(0xFFEEEEEE), // set border color
             ),
           ),
-          child: SizedBox(
+          child:const SizedBox(
             height: 36, // set height
             width: 20,
             child: Center(

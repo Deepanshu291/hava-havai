@@ -3,6 +3,8 @@ import 'package:marvelapp/Widgets/Buttons/buttons.dart';
 
 
 class Heroframes extends StatelessWidget {
+  const Heroframes({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Stack(
@@ -10,13 +12,13 @@ class Heroframes extends StatelessWidget {
         Container(
           width: 350, // Width in dp converted to logical pixels
           height: 300,
-          margin: EdgeInsets.only(top: 10),
+          margin: const EdgeInsets.only(top: 10),
           // width: double.infinity,
           // height: double.infinity,
           decoration: BoxDecoration(
             // color: Color(0xFF01000F),
             borderRadius: BorderRadius.circular(12),
-            image: DecorationImage(
+            image:const DecorationImage(
               image: NetworkImage(
                   "https://images.unsplash.com/photo-1444723121867-7a241cacace9"), 
               fit: BoxFit.cover,
@@ -41,8 +43,8 @@ class Heroframes extends StatelessWidget {
               mainAxisSize: MainAxisSize
                   .min, // Ensure the Column takes minimum vertical space
               children: [
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
+              const  Padding(
+                  padding:  EdgeInsets.all(8.0),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -76,13 +78,13 @@ class Heroframes extends StatelessWidget {
                       height: 1,
                       width: double.infinity,
                       color: Colors.grey,
-                      margin: EdgeInsets.symmetric(vertical: 1),
+                      margin: const EdgeInsets.symmetric(vertical: 1),
                     ),
                     // Add SizedBox to decrease space between rows
                     Row(
                       mainAxisAlignment: MainAxisAlignment.spaceAround,
                       children: [
-                        ThumbBtn(
+                        const ThumbBtn(
                           icon: Icons.turn_right,
                           text: "Get direction",
                         ),
@@ -91,7 +93,7 @@ class Heroframes extends StatelessWidget {
                           width: 0.5,
                           color: Colors.grey,
                         ),
-                        ThumbBtn(
+                        const ThumbBtn(
                           icon: Icons.phone,
                           text: "Call airport",
                         )
@@ -115,7 +117,7 @@ class Thumb extends StatelessWidget {
   final String text;
   final String subtext;
 
-  Thumb({
+  const Thumb({
     super.key,
     required this.icon,
     required this.text,
@@ -124,7 +126,7 @@ class Thumb extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
+    return  SizedBox(
       height: 80,
       child: Column(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
@@ -132,7 +134,7 @@ class Thumb extends StatelessWidget {
           Icon(icon),
           Text(
             text,
-            style: TextStyle(
+            style:const TextStyle(
               fontFamily: 'UberMove-Medium',
               color: Color(0xFF080808),
               fontSize: 16,
@@ -141,7 +143,7 @@ class Thumb extends StatelessWidget {
           ),
           Text(
             subtext,
-            style: TextStyle(
+            style:const TextStyle(
               fontFamily: 'UberMove-Medium',
               color: Color(0xFF909090),
               fontSize: 11,

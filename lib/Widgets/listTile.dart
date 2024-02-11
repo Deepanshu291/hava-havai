@@ -1,19 +1,21 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:marvelapp/Utils/pallets.dart';
 
-class listTile extends StatelessWidget {
-  final IconData icon;
+class CustomListTile extends StatelessWidget {
+  // final IconData icon;
+  final String svgPath;
   final String title;
   final String subtile;
   final IconData subIcon;
   final bool? pb;
-  const listTile(
+  const CustomListTile(
       {super.key,
-      required this.icon,
       required this.title,
       required this.subtile,
       required this.subIcon,
-      this.pb = false});
+      this.pb = false,
+      required this.svgPath});
 
   @override
   Widget build(BuildContext context) {
@@ -23,22 +25,19 @@ class listTile extends StatelessWidget {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Icon(
-              icon,
-              size: 30,
-            ),
-            SizedBox(
+            SvgPicture.asset(svgPath),
+            const SizedBox(
               width: 10,
             ),
             Text(
               title,
               style: pb!
-                  ? dubaiStyle.copyWith(
-                      color: Color(0xFF080808),
+                  ? uberMedium.copyWith(
+                      color:const Color(0xFF080808),
                       fontSize: 17,
                       height: 1.19,
                     )
-                  : dubaiStyle.copyWith(fontSize: 14),
+                  : uberMedium.copyWith(fontSize: 14),
             ),
           ],
         ),
@@ -48,9 +47,9 @@ class listTile extends StatelessWidget {
             Text(
               subtile,
               style: pb!
-                  ? dubaiStyle
-                  : dubaiStyle.copyWith(
-                      color: Color(0xFF080808),
+                  ? uberMedium
+                  : uberMedium.copyWith(
+                      color:const Color(0xFF080808),
                       fontSize: 14,
                       fontWeight: FontWeight.w600),
             ),

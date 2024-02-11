@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class ThumbBtn extends StatelessWidget {
   final IconData icon;
   final String text;
-  ThumbBtn({
+  const ThumbBtn({
     super.key,
     required this.icon,
     required this.text,
@@ -18,7 +18,7 @@ class ThumbBtn extends StatelessWidget {
       icon: Icon(icon, color: Colors.blue.shade700),
       label: Text(
         text,
-        style: TextStyle(
+        style:const TextStyle(
           fontFamily: 'UberMove-Medium',
           color: Color(0xFF080808),
           fontSize: 14,
@@ -26,11 +26,11 @@ class ThumbBtn extends StatelessWidget {
         ),
       ),
       style: ElevatedButton.styleFrom(
-        primary: Colors.white,
+        backgroundColor: Colors.white,
         shadowColor: Colors.white,
-        padding: EdgeInsets.symmetric(horizontal: 20), // Remove padding
+        padding:const EdgeInsets.symmetric(horizontal: 20), // Remove padding
         elevation: 0, // Remove elevation
-        shape: RoundedRectangleBorder(
+        shape:const RoundedRectangleBorder(
           borderRadius: BorderRadius.zero, // Remove border radius
         ),
         side: BorderSide.none, // Remove border

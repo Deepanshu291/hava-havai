@@ -33,7 +33,7 @@ class AccordionItem extends StatelessWidget {
         if (currentIndex == index)
           Text(
             content,
-            style: dubaiStyle,
+            style: uberMedium,
           ),
       ],
     );

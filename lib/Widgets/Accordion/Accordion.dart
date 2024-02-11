@@ -26,7 +26,7 @@ class _AccordionState extends State<Accordion> {
             });
           },
         ),
-        Divider(),
+        const Divider(),
         AccordionItem(
           title: 'AI Ansari Exchange',
           content:
@@ -39,7 +39,7 @@ class _AccordionState extends State<Accordion> {
             });
           },
         ),
-        Divider(),
+        const Divider(),
         AccordionItem(
           title: 'Emirates NBD',
           content:

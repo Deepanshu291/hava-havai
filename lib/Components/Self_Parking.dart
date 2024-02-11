@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:marvelapp/Utils/Svg.dart';
 import 'package:marvelapp/Widgets/Buttons/NavbarBtn.dart';
+import 'package:marvelapp/Widgets/CustomListTile.dart';
 import 'package:marvelapp/Widgets/listTile.dart';
 
 class SelfParking extends StatefulWidget {
@@ -40,8 +42,11 @@ class _SelfParkingState extends State<SelfParking> {
             ),
           ],
         ),
-        const listTile(
-          icon: Icons.motorcycle,
+        SizedBox(
+          height: 10,
+        ),
+        const CustomListTile(
+          svgPath: SvgPath.twoWheeler,
           title: "Two Wheeler",
           subtile: "AED 50 / day",
           subIcon: Icons.error_outline,
@@ -49,8 +54,8 @@ class _SelfParkingState extends State<SelfParking> {
         const SizedBox(
           height: 10,
         ),
-        const listTile(
-          icon: Icons.car_rental,
+        const CustomListTile(
+          svgPath: SvgPath.car,
           title: "Car Parking",
           subtile: "AED 100 / day",
           subIcon: Icons.error_outline,
@@ -58,10 +63,10 @@ class _SelfParkingState extends State<SelfParking> {
         const SizedBox(
           height: 10,
         ),
-        const listTile(
-          icon: Icons.motorcycle,
-          title: "Two Wheeler",
-          subtile: "AED 50 / day",
+        const CustomListTile(
+          svgPath: SvgPath.electricCar,
+          title: "Electric Car",
+          subtile: "AED 100 / day",
           subIcon: Icons.error_outline,
         )
       ],
