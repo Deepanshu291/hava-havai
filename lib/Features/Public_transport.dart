@@ -19,9 +19,11 @@ class PublicTransport extends StatelessWidget {
           subIcon: Icons.arrow_forward_outlined,
           pb: true,
         ),
-        SizedBox(
-          height: 10,
-        ),
+        Divider(height: 30),
+        // SizedBox(
+
+        //   height: 10,
+        // ),
         CustomListTile(
           svgPath: SvgPath.bus,
           title: "Bus",
